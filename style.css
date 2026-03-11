@@ -1,44 +1,194 @@
-body {margin: 0;
-padding-top: 80px;
-background-color: #0a0a0f;
-color:white;}
-nav { display:flex;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 80px;
+    background-color: #0a0a0f;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+/* NAV */
+nav {
+    display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px 40px;
     position: fixed;
-    width:100%;
-    top: 0%;
-    background-color: #0a0a0f;
-    box-sizing: border-box; }
-.name { color: white;}
-nav a { color: white;
-text-decoration: none;
-margin-left: 24px; }
-.hero { height: 100vh;
-display: flex;
-text-align: center;
-flex-direction: column;
-justify-content: center;
-align-items: center;}
-.owner {color:#e63946;
-text-shadow: 0 0 20px rgba(230, 57, 70, 0.6)}
-.sub { color:#9ca3af}
-#about { padding: 100px 40px;
-max-width: 800px;
-margin: 0 auto; }
-#skills { padding:100px 40px;
-max-width: 800px;
-margin: 0 auto; }
-#projects { padding:100px 40px;
-max-width:800px;
-margin: 0 auto;}
-#connect a { text-decoration: none;
-color: white;
-padding: 100px 40px;
-max-width:800px;
-margin: 0 auto;
-text-align: center;
-justify-content: center;}
-#goals { padding: 100px 40px;
-max-width: 800px;
-margin: 0 auto;}
+    width: 100%;
+    top: 0;
+    background-color: rgba(10, 10, 15, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(230, 57, 70, 0.2);
+    z-index: 100;
+}
+
+.name {
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+nav a {
+    color: #9ca3af;
+    text-decoration: none;
+    margin-left: 24px;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #e63946;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.owner {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #e63946;
+    text-shadow: 0 0 40px rgba(230, 57, 70, 0.5);
+    margin-bottom: 16px;
+}
+
+.sub {
+    color: #9ca3af;
+    font-size: 1.2rem;
+}
+.sub2 {
+    color: #4b5563;
+    font-size: 0.95rem;
+    margin-top: 8px;
+}
+
+/* SECTIONS */
+#about, #skills, #projects, #goals, #connect {
+    padding: 100px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: white;
+    border-left: 3px solid #e63946;
+    padding-left: 16px;
+}
+
+/* ABOUT */
+#about p {
+    color: #9ca3af;
+    font-size: 1rem;
+}
+
+/* SKILLS */
+#skills .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-tag {
+    background-color: rgba(230, 57, 70, 0.1);
+    border: 1px solid rgba(230, 57, 70, 0.3);
+    color: #e63946;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* PROJECTS */
+article {
+    background-color: #111118;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 24px;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+article:hover {
+    border-color: rgba(230, 57, 70, 0.4);
+    transform: translateY(-2px);
+}
+
+article h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: white;
+}
+
+article p {
+    color: #9ca3af;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+article a {
+    color: #e63946;
+    text-decoration: none;
+    font-size: 0.85rem;
+    border: 1px solid rgba(230, 57, 70, 0.4);
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+article a:hover {
+    background-color: rgba(230, 57, 70, 0.1);
+}
+
+/* GOALS */
+#goals h3 {
+    font-size: 1.1rem;
+    color: #e63946;
+    margin-bottom: 8px;
+    margin-top: 32px;
+}
+
+#goals p, #goals a {
+    color: #9ca3af;
+    font-size: 0.95rem;
+}
+
+#goals a {
+    color: #e63946;
+}
+
+/* CONNECT */
+#connect {
+    text-align: center;
+}
+
+#connect a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 32px;
+    border-radius: 8px;
+    margin: 0 10px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+#connect a:hover {
+    border-color: #e63946;
+    color: #e63946;
+}
